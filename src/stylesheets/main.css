@@ -1,3 +1,33 @@
 /* Your styles go here */
 @import url("bootstrap/dist/css/bootstrap.min.css");
 @import url("bootstrap-icons/font/bootstrap-icons.css");
+
+
+
+:root {
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    font-family: 'Alegreya Sans SC';
+    --mycolor--: #0476D0;
+    --text-color--: white;
+}
+
+*, ::before, ::after{
+    
+    box-sizing: inherit;
+}
+
+body{
+    margin: 1rem;
+}
+
+
+.center{
+    background-color: var(--mycolor--);
+}
+
+
+
+
+
