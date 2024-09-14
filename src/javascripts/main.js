@@ -6,19 +6,18 @@ import "bootstrap"
 let jokeHtml = ``
 
 fetch("https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit")
-    .then(function(res) {
-        if (!res.ok) {
-            throw Error("Reuqest Failed")
-        } else {
-            return res.json()
-        }
-    })
-    .then(function(data) {
-        console.log(data);
-        // if some value are undefine change their value.
-        if (data.setup == undefined){
-
-             jokeHtml  = `
+  .then(function (res) {
+    if (!res.ok) {
+      throw Error("Reuqest Failed")
+    } else {
+      return res.json()
+    }
+  })
+  .then(function (data) {
+    console.log(data)
+    // if some value are undefine change their value.
+    if (data.setup == undefined) {
+      jokeHtml = `
 
          <div class="card">
   <div class="card-header">
@@ -32,13 +31,9 @@ fetch("https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,r
   </div>
 </div>
          
-         `;
-
-       
-
-        } else {
-
-             jokeHtml = `
+         `
+    } else {
+      jokeHtml = `
                         
                         <div class="card">
   <div class="card-header">
@@ -54,23 +49,16 @@ fetch("https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,r
 
                         
                         `
-                        
-                        
+    }
 
-        }
-        
-        document.querySelector(".display").innerHTML = jokeHtml;
-    })
-    .catch(function(err) {
-        console.log(err)
-    });
+    document.querySelector(".display").innerHTML = jokeHtml
+  })
+  .catch(function (err) {
+    console.log(err)
+  })
 
-
-document.querySelector('.generate').addEventListener('click', function() {
-    location.reload()
+document.querySelector(".generate").addEventListener("click", function () {
+  location.reload()
 })
 
-// allow people to save jokes and like them and leave comments 
-
-
-
+// allow people to save jokes and like them and leave comments
